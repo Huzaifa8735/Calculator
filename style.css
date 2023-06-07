@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+:root {
+  --bg-color: #303841;
+  --main-bg: #222831;
+  --text-color: #fff;
+  --shadow-color: inset -5px -5px 5px rgba(0, 0, 0, 0.2),
+    inset 5px 5px 5px rgba(255, 255, 255, 0.2);
+  --second-shadow-color: -5px -5px 30px rgba(255, 255, 255, 0.2),
+    5px 5px 30px rgba(0, 0, 0, 0.3);
+}
+.container {
+  width: 100%;
+  height: 100vh;
+  background: var(--bg-color);
+  position: relative;
+}
+.container.active {
+  --bg-color: #fff;
+  --main-bg: #fff;
+  --text-color: #000;
+  --shadow-color: inset 0px 0px 15px rgba(0, 0, 0, 0.2);
+  --second-shadow-color: 0px 0px 30px rgba(0, 0, 0, 0.2);
+}
+.light-mode {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  width: 50px;
+  height: 50px;
+  border: 2px solid var(--text-color);
+  border-radius: 50%;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+.light-mode:hover {
+  color: var(--main-bg);
+  background-color: var(--text-color);
+}
+.light-mode i {
+  position: absolute;
+  font-size: 25px;
+}
+.light-mode i.moon {
+  opacity: 0;
+}
+.light-mode.active i.moon {
+  opacity: 1;
+}
+.light-mode.active i.sun {
+  opacity: 0;
+}
+.calculator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--main-bg);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: var(--second-shadow-color);
+}
+.calculator .display {
+  max-width: 312px;
+  height: 80px;
+  margin: 10px;
+  border-radius: 10px;
+}
+.calculator .display input {
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 100%;
+  font-size: 40px;
+  padding: 10px;
+  text-align: right;
+  border-radius: 10px;
+  background: transparent;
+  box-shadow: var(--shadow-color);
+  color: var(--text-color);
+}
+.calculator button {
+  border: none;
+  outline: none;
+  width: 60px;
+  height: 60px;
+  background-color: transparent;
+  margin: 10px;
+  font-size: 22px;
+  border-radius: 10px;
+  color: var(--text-color);
+  box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.1),
+    5px 5px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+.calculator .equal {
+  width: 145px;
+}
